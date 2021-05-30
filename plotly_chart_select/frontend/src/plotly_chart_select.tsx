@@ -22,7 +22,11 @@ class PlotlyChartSelect extends StreamlitComponentBase {
         style={{position: 'relative', height: fig.layout.height, width: fig.layout.width}} 
         data={fig.data}
         layout={fig.layout}
-        config={fig.config}
+        // config={fig.config}
+        config={{
+          'displaylogo': false,
+          'modeBarButtonsToRemove': ['toImage', 'zoom2d', 'lasso2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'toggleSpikelines']
+          }}
         frames={fig.frames}
         onClick={this.onSelect}
         onSelected={this.onSelect}
