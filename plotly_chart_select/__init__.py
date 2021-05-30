@@ -36,7 +36,9 @@ else:
     # build directory:
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
-    _component_func = components.declare_component("plotly_chart_select", path=build_dir)
+    _component_func = components.declare_component(
+        "plotly_chart_select", 
+        path=build_dir)
 
 
 # Create a wrapper function for the component. This is an optional
@@ -44,7 +46,7 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def plotly_chart_select(name, key=None):
+def plotly_chart_select(fig, key=None):
     """Create a new instance of "my_component".
 
     Parameters
@@ -71,7 +73,10 @@ def plotly_chart_select(name, key=None):
     #
     # "default" is a special argument that specifies the initial return
     # value of the component before the user has interacted with it.
-    component_value = _component_func(fig=fig.to_json(), key=key, default=[])
+    component_value = _component_func(
+        fig=fig.to_json(), 
+        key=key, 
+        default=[])
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.
