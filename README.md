@@ -1,7 +1,9 @@
 # StreamlitPlotlySelect
 Streamlit component for plotly that returns selected data 
 2021-05-30
+2021-07-10: added quick commands
 
+Quick commands
 ```
 # cd frontend/ folder
 cd <path-to-template/frontend>
